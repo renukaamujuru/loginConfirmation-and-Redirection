@@ -1,0 +1,60 @@
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		.main{
+			border-style: groove;
+			width: 30%;
+			height: 30%;
+			margin-top: 200px;
+			margin-left: 150px;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<div class="main">
+		
+		<form id="form">
+           <h1>LOGIN PAGE</h1>
+           UserName:<input type="text" id="userName"><br><br>
+           Password:<input type="password" id="password"><br><br>
+           		</form>
+           <center><button>Login</button></center>
+
+        <p id="p"></p>
+
+	</div>
+	<script type="text/javascript">
+
+		var button1=document.getElementsByTagName('button')[0];
+	    console.log(button1);
+	    var count=0;
+		var userName=document.getElementById('userName');
+		var password=document.getElementById('password');
+		var spanEl=document.createElement('span');
+		button1.onclick=function(){
+				submitValues();
+				
+				if(count>= 3)
+				{
+		            userName.disabled=true;
+		            password.disabled=true;
+					var form1=document.getElementById('form1');				   
+				    spanEl.innerHTML="you exceeded your login attempts";
+				    var getP=document.getElementById('p');				    
+				    getP.appendChild(spanEl);
+				}
+				count++;
+			
+		}
+
+      function submitValues(){
+      				if(userName.value == 'renu' && password.value == "renu")
+      				{
+      					window.location.assign("flagshover.html");
+                 	}
+			  }
+	</script>
+</body>
+</html>
